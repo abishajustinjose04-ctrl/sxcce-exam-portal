@@ -1,0 +1,172 @@
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    background: #f1f5f9;
+    color: #1e293b;
+}
+
+.login-card {
+    width: 100%;
+    max-width: 420px;
+    padding: 32px;
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 8px 28px rgba(0, 0, 0, 0.08);
+}
+
+h1 {
+    font-size: 27px;
+    margin-bottom: 8px;
+}
+
+label {
+    display: block;
+    margin-top: 18px;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    font-size: 16px;
+}
+
+button {
+    width: 100%;
+    margin-top: 22px;
+    padding: 13px;
+    border: 0;
+    border-radius: 8px;
+    background: #1d4ed8;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #1e40af;
+}
+
+#message {
+    margin-top: 16px;
+}
+
+/* Shared dashboard and admin form improvements */
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f3f6fb;
+    color: #1f2937;
+    margin: 0;
+    padding: 24px 12px;
+}
+
+.login-card {
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 850px;
+    margin: 24px auto;
+    padding: 28px;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.08);
+}
+
+h1, h2, h3 {
+    color: #183b66;
+}
+
+label {
+    display: block;
+    margin-top: 14px;
+    margin-bottom: 6px;
+    font-weight: 600;
+}
+
+input, select, textarea {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 11px;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    font: inherit;
+    background: #fff;
+}
+
+textarea {
+    min-height: 90px;
+    resize: vertical;
+}
+
+button {
+    margin-top: 14px;
+    padding: 11px 16px;
+    border: 0;
+    border-radius: 6px;
+    background: #2459a9;
+    color: #fff;
+    font: inherit;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #194681;
+}
+
+a {
+    color: #2459a9;
+}
+
+section {
+    margin: 16px 0;
+    padding: 14px;
+    border: 1px solid #dbe3ef;
+    border-radius: 8px;
+    overflow-wrap: anywhere;
+}
+
+hr {
+    margin: 24px 0;
+    border: 0;
+    border-top: 1px solid #e2e8f0;
+}
+
+table {
+    margin-top: 16px;
+    border-collapse: collapse;
+    background: #fff;
+    font-size: 14px;
+}
+
+th, td {
+    border: 1px solid #dbe3ef;
+    text-align: left;
+    overflow-wrap: anywhere;
+}
+
+th {
+    background: #eaf0f9;
+}
+
+@media (max-width: 600px) {
+    .login-card {
+        padding: 18px;
+    }
+
+    table {
+        font-size: 12px;
+    }
+}

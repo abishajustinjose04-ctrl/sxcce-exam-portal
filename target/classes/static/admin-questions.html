@@ -1,0 +1,61 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Questions | SXCCE ExamPortal</title>
+    <link rel="stylesheet" href="/style.css">
+    <script src="/common.js" defer></script>
+    <script src="/admin-questions.js" defer></script>
+</head>
+<body>
+<main class="login-card">
+    <h1>Manage Questions</h1>
+    <p><a href="/admin-dashboard.html">Back to Admin Dashboard</a></p>
+
+    <label for="examSelect">Select Exam</label>
+    <select id="examSelect" required>
+        <option value="">Loading exams...</option>
+    </select>
+
+    <h2>Add a Question</h2>
+    <form id="questionForm">
+        <label for="questionText">Question</label>
+        <textarea id="questionText" required maxlength="2000"
+                  placeholder="Enter the question"></textarea>
+
+        <label for="optionA">Option A</label>
+        <input id="optionA" required>
+
+        <label for="optionB">Option B</label>
+        <input id="optionB" required>
+
+        <label for="optionC">Option C</label>
+        <input id="optionC" required>
+
+        <label for="optionD">Option D</label>
+        <input id="optionD" required>
+
+        <label for="correctOption">Correct Option</label>
+        <select id="correctOption" required>
+            <option value="">Choose correct answer</option>
+            <option value="A">A</option>
+            <option value="B">B</option>
+            <option value="C">C</option>
+            <option value="D">D</option>
+        </select>
+
+        <button type="submit">Save Question</button>
+    </form>
+
+    <p id="questionMessage" role="status"></p>
+
+    <hr>
+    <h2>Questions in Selected Exam</h2>
+    <div id="questionList">Select an exam to view questions.</div>
+
+    <button id="logoutButton" type="button">Logout</button>
+</main>
+</body>
+</html>

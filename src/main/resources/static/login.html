@@ -1,0 +1,31 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | SXCCE ExamPortal</title>
+    <link rel="stylesheet" href="/style.css">
+    <script src="/common.js" defer></script>
+    <script src="/login.js" defer></script>
+</head>
+<body>
+    <main class="login-card">
+        <h1>SXCCE ExamPortal</h1>
+        <p>Smart Online Examination and Proctoring System</p>
+
+        <form id="loginForm">
+            <label for="username">Username</label>
+            <input id="username" name="username"
+                   autocomplete="username" required>
+
+            <label for="password">Password</label>
+            <input id="password" name="password" type="password"
+                   autocomplete="current-password" required>
+
+            <button type="submit">Login</button>
+            <p id="message" role="status"></p>
+        </form>
+    </main>
+</body>
+</html>
