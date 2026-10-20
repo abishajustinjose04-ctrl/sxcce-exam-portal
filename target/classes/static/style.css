@@ -1,172 +1,322 @@
 
+/* =====================================================
+   SXCCE EXAMPORTAL — PROFESSIONAL UNIVERSITY UI
+   Shared stylesheet for existing HTML pages
+   ===================================================== */
+
+:root {
+    --navy: #142c4e;
+    --navy-light: #1d416e;
+    --blue: #315f9d;
+    --blue-soft: #edf3fb;
+    --page: #f5f7fb;
+    --white: #ffffff;
+    --text: #202b3c;
+    --muted: #6b7789;
+    --border: #e0e6ef;
+    --success: #217a52;
+    --success-bg: #e9f6ef;
+    --warning: #956514;
+    --warning-bg: #fff5df;
+    --danger: #b93838;
+    --radius: 10px;
+    --shadow: 0 2px 8px rgba(20, 44, 78, 0.05);
+}
+
 * {
     box-sizing: border-box;
 }
 
-body {
-    margin: 0;
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 20px;
-    font-family: Arial, sans-serif;
-    background: #f1f5f9;
-    color: #1e293b;
+html {
+    scroll-behavior: smooth;
 }
 
-.login-card {
-    width: 100%;
-    max-width: 420px;
-    padding: 32px;
-    background: white;
-    border-radius: 16px;
-    box-shadow: 0 8px 28px rgba(0, 0, 0, 0.08);
+body {
+    margin: 0;
+    background: var(--page);
+    color: var(--text);
+    font-family: "Segoe UI", Arial, sans-serif;
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+h1, h2, h3, h4 {
+    color: var(--navy);
+    line-height: 1.3;
+    margin-top: 0;
 }
 
 h1 {
-    font-size: 27px;
+    font-size: clamp(25px, 3vw, 32px);
+    font-weight: 700;
+    letter-spacing: -0.5px;
+}
+
+h2 {
+    font-size: 21px;
+    margin-bottom: 16px;
+}
+
+h3 {
+    font-size: 17px;
     margin-bottom: 8px;
 }
 
-label {
-    display: block;
-    margin-top: 18px;
-    margin-bottom: 8px;
-    font-weight: bold;
-}
-
-input {
-    width: 100%;
-    padding: 12px;
-    border: 1px solid #cbd5e1;
-    border-radius: 8px;
-    font-size: 16px;
-}
-
-button {
-    width: 100%;
-    margin-top: 22px;
-    padding: 13px;
-    border: 0;
-    border-radius: 8px;
-    background: #1d4ed8;
-    color: white;
-    font-size: 16px;
-    cursor: pointer;
-}
-
-button:hover {
-    background: #1e40af;
-}
-
-#message {
-    margin-top: 16px;
-}
-
-/* Shared dashboard and admin form improvements */
-
-body {
-    font-family: Arial, sans-serif;
-    background: #f3f6fb;
-    color: #1f2937;
-    margin: 0;
-    padding: 24px 12px;
-}
-
-.login-card {
-    box-sizing: border-box;
-    width: 100%;
-    max-width: 850px;
-    margin: 24px auto;
-    padding: 28px;
-    background: #ffffff;
-    border-radius: 12px;
-    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.08);
-}
-
-h1, h2, h3 {
-    color: #183b66;
-}
-
-label {
-    display: block;
-    margin-top: 14px;
-    margin-bottom: 6px;
-    font-weight: 600;
-}
-
-input, select, textarea {
-    box-sizing: border-box;
-    width: 100%;
-    padding: 11px;
-    border: 1px solid #cbd5e1;
-    border-radius: 6px;
-    font: inherit;
-    background: #fff;
-}
-
-textarea {
-    min-height: 90px;
-    resize: vertical;
-}
-
-button {
-    margin-top: 14px;
-    padding: 11px 16px;
-    border: 0;
-    border-radius: 6px;
-    background: #2459a9;
-    color: #fff;
-    font: inherit;
-    cursor: pointer;
-}
-
-button:hover {
-    background: #194681;
+p {
+    margin-top: 0;
 }
 
 a {
-    color: #2459a9;
+    color: var(--blue);
+    text-decoration: none;
 }
 
-section {
-    margin: 16px 0;
-    padding: 14px;
-    border: 1px solid #dbe3ef;
-    border-radius: 8px;
-    overflow-wrap: anywhere;
+a:hover {
+    text-decoration: underline;
+}
+
+button, input, select, textarea {
+    font: inherit;
+}
+
+button {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    min-height: 42px;
+    padding: 10px 17px;
+    border: 1px solid var(--blue);
+    border-radius: 7px;
+    background: var(--blue);
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.15s ease, border-color 0.15s ease;
+}
+
+button:hover {
+    background: var(--navy-light);
+    border-color: var(--navy-light);
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+    outline: 3px solid #9fc4fa;
+    outline-offset: 2px;
+}
+
+button:disabled {
+    opacity: 0.55;
+    cursor: not-allowed;
+}
+
+input, select, textarea {
+    display: block;
+    width: 100%;
+    min-height: 44px;
+    padding: 10px 12px;
+    color: var(--text);
+    background: white;
+    border: 1px solid #cfd8e5;
+    border-radius: 7px;
+}
+
+textarea {
+    min-height: 110px;
+    resize: vertical;
+}
+
+input::placeholder,
+textarea::placeholder {
+    color: #8b96a6;
+}
+
+label {
+    display: block;
+    margin: 15px 0 6px;
+    color: #33445c;
+    font-weight: 600;
+    font-size: 14px;
 }
 
 hr {
-    margin: 24px 0;
     border: 0;
-    border-top: 1px solid #e2e8f0;
+    border-top: 1px solid var(--border);
+    margin: 25px 0;
+}
+
+.login-card {
+    width: min(100% - 32px, 900px);
+    margin: 32px auto;
+    padding: 30px;
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+}
+
+.login-card > form button {
+    margin-top: 20px;
+}
+
+.login-card section {
+    margin: 14px 0;
+    padding: 18px;
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+}
+
+.login-card section p:last-child {
+    margin-bottom: 0;
+}
+
+#examMessage,
+#questionMessage,
+#resultsMessage,
+#warning {
+    margin-top: 12px;
+    color: var(--muted);
+    overflow-wrap: anywhere;
+}
+
+#warning {
+    color: var(--warning);
+}
+
+#examList,
+#adminExamList,
+#questionList,
+#resultsList {
+    min-width: 0;
+    overflow-wrap: anywhere;
+}
+
+#examList > section,
+#adminExamList > section {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+}
+
+#examList button,
+#adminExamList button {
+    margin-top: 4px;
 }
 
 table {
+    width: 100%;
     margin-top: 16px;
     border-collapse: collapse;
-    background: #fff;
+    background: white;
     font-size: 14px;
 }
 
 th, td {
-    border: 1px solid #dbe3ef;
+    padding: 12px;
     text-align: left;
-    overflow-wrap: anywhere;
+    border-bottom: 1px solid var(--border);
 }
 
 th {
-    background: #eaf0f9;
+    background: #edf2f8;
+    color: var(--navy);
+    font-weight: 700;
 }
 
-@media (max-width: 600px) {
+tr:hover td {
+    background: #fafcff;
+}
+
+#timer {
+    color: var(--navy);
+    font-weight: 700;
+    font-size: 20px;
+}
+
+#questions > section {
+    margin: 16px 0;
+    padding: 20px;
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 9px;
+}
+
+#questions > section label {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    margin: 12px 0;
+    padding: 11px;
+    border: 1px solid var(--border);
+    border-radius: 7px;
+    font-weight: 400;
+    cursor: pointer;
+}
+
+#questions > section label:hover {
+    background: var(--blue-soft);
+}
+
+#questions > section input[type="radio"] {
+    width: 17px;
+    min-height: 17px;
+    height: 17px;
+    margin-top: 3px;
+    flex: 0 0 17px;
+}
+
+#questions > section label:has(input:checked) {
+    border-color: var(--blue);
+    background: var(--blue-soft);
+}
+
+button#logoutButton {
+    margin-top: 25px;
+    background: white;
+    color: var(--navy);
+    border-color: var(--border);
+}
+
+button#logoutButton:hover {
+    background: #edf2f8;
+}
+
+small, .muted {
+    color: var(--muted);
+}
+
+@media (max-width: 650px) {
+    body {
+        font-size: 14px;
+    }
+
     .login-card {
-        padding: 18px;
+        width: calc(100% - 20px);
+        margin: 10px auto;
+        padding: 19px;
+    }
+
+    h1 {
+        font-size: 25px;
     }
 
     table {
-        font-size: 12px;
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+
+    #questions > section {
+        padding: 14px;
+    }
+
+    button {
+        max-width: 100%;
     }
 }

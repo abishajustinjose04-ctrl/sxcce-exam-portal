@@ -4,28 +4,152 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login | SXCCE ExamPortal</title>
+    <title>Sign In | SXCCE ExamPortal</title>
     <link rel="stylesheet" href="/style.css">
+    <style>
+        body {
+            min-height: 100vh;
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) minmax(340px, 0.85fr);
+            background: white;
+        }
+
+        .login-brand {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: clamp(30px, 7vw, 90px);
+            background: var(--navy);
+            color: white;
+        }
+
+        .login-brand h1 {
+            color: white;
+            max-width: 550px;
+            font-size: clamp(32px, 4vw, 48px);
+        }
+
+        .login-brand p {
+            max-width: 470px;
+            color: #d9e4f2;
+            font-size: 16px;
+        }
+
+        .college-logo {
+            display: block;
+            width: 86px;
+            height: 86px;
+            object-fit: contain;
+            background: white;
+            border-radius: 8px;
+            padding: 6px;
+            margin-bottom: 28px;
+        }
+
+        .login-panel {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 30px;
+        }
+
+        .login-panel .login-card {
+            width: 100%;
+            max-width: 410px;
+            margin: 0;
+            padding: 0;
+            border: 0;
+            box-shadow: none;
+        }
+
+        .login-panel h2 {
+            margin-bottom: 6px;
+            font-size: 27px;
+        }
+
+        .login-subtitle {
+            color: var(--muted);
+            margin-bottom: 28px;
+        }
+
+        .login-panel form button {
+            width: 100%;
+        }
+
+        .login-footer {
+            margin-top: 25px;
+            color: var(--muted);
+            font-size: 12px;
+        }
+
+        @media (max-width: 760px) {
+            body {
+                grid-template-columns: 1fr;
+            }
+
+            .login-brand {
+                padding: 28px;
+            }
+
+            .login-brand h1 {
+                font-size: 30px;
+            }
+
+            .college-logo {
+                width: 65px;
+                height: 65px;
+                margin-bottom: 15px;
+            }
+
+            .login-panel {
+                padding: 30px 22px;
+            }
+        }
+    </style>
     <script src="/common.js" defer></script>
     <script src="/login.js" defer></script>
 </head>
 <body>
-    <main class="login-card">
-        <h1>SXCCE ExamPortal</h1>
-        <p>Smart Online Examination and Proctoring System</p>
+    <section class="login-brand">
+        <img class="college-logo"
+             src="/images/college-logo.png"
+             alt="College logo"
+             onerror="this.hidden=true">
 
-        <form id="loginForm">
-            <label for="username">Username</label>
-            <input id="username" name="username"
-                   autocomplete="username" required>
+        <p>SXCCE · ONLINE EXAMINATION</p>
+        <h1>Welcome to your examination portal.</h1>
+        <p>
+            Access your examinations, manage assessments, and
+            review results through one centralized academic platform.
+        </p>
+    </section>
 
-            <label for="password">Password</label>
-            <input id="password" name="password" type="password"
-                   autocomplete="current-password" required>
+    <main class="login-panel">
+        <div class="login-card">
+            <h2>Sign in</h2>
+            <p class="login-subtitle">
+                Enter your account details to continue.
+            </p>
 
-            <button type="submit">Login</button>
-            <p id="message" role="status"></p>
-        </form>
+            <form id="loginForm">
+                <label for="username">Username</label>
+                <input id="username" name="username"
+                       autocomplete="username" required
+                       placeholder="Enter your username">
+
+                <label for="password">Password</label>
+                <input id="password" name="password"
+                       type="password" autocomplete="current-password"
+                       required placeholder="Enter your password">
+
+                <button type="submit">Sign in to ExamPortal</button>
+                <p id="loginMessage" role="status" aria-live="polite"></p>
+            </form>
+
+            <p class="login-footer">
+                SXCCE ExamPortal · Academic Assessment System
+            </p>
+        </div>
     </main>
 </body>
 </html>
